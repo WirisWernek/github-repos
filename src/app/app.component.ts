@@ -1,6 +1,20 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import {
+	initAccordions,
+	initCarousels,
+	initCollapses,
+	initDials,
+	initDismisses,
+	initDrawers,
+	initDropdowns,
+	initModals,
+	initPopovers,
+	initTabs,
+	initTooltips,
+} from 'flowbite';
+import { Observable, take } from 'rxjs';
 import { RepositorioModel } from './models/Repositorio.model';
+import { UserModel } from './models/User.model';
 import { GitHubService } from './services/github.service';
 
 @Component({
@@ -9,13 +23,47 @@ import { GitHubService } from './services/github.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'github-repos';
+  title = 'GitHub Repos List';
   username: string = 'wiriswernek';
   repositorios$!: Observable<RepositorioModel[]>;
-
-  constructor(private githubServices: GitHubService) {}
+  user: UserModel;
+  constructor(private githubServices: GitHubService) {
+    this.user = new UserModel();
+  }
 
   ngOnInit(): void {
-    this.repositorios$ = this.githubServices.getRepositorios(this.username);
+    this.Search();
+    initAccordions();
+    initCarousels();
+    initCollapses();
+    initDials();
+    initDismisses();
+    initDrawers();
+    initDropdowns();
+    initModals();
+    initPopovers();
+    initTabs();
+    initTooltips();
+  }
+
+  Search() {
+    if (this.username.trim() !== '') {
+      this.githubServices.getUser(this.username).subscribe((user) => {
+        this.user = user;
+        this.user.name = this.getFirstAndLastName();
+        take(1);
+      });
+      this.repositorios$ = this.githubServices.getRepositorios(this.username);
+    }
+  }
+
+  private getFirstAndLastName(): string {
+    if (!this.user?.name) return '';
+
+    const splittedName = this.user?.name.split(' ');
+
+    return `${splittedName[0]} ${
+      splittedName.length >= 2 ? splittedName.pop() : ''
+    }`;
   }
 }
