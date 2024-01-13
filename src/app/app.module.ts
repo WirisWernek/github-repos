@@ -7,19 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RepositorioCardComponent } from './components/repositorio-card/repositorio-card.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     RepositorioCardComponent,
-    UserCardComponent
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
 	FormsModule,
-	ReactiveFormsModule
+	ReactiveFormsModule,
+	SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
