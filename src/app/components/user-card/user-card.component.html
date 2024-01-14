@@ -2,6 +2,15 @@
 	<div
 	   class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 	>
+	<ng-container [ngTemplateOutlet]="user.name !== null && user.name.trim() !== '' ? loaded : loading "></ng-container>
+	
+	<ng-template #loading>
+		<div class="flex justify-center items-center">
+			<app-spinner></app-spinner>
+		</div>
+	</ng-template>
+
+	<ng-template #loaded>
 	   <div class="flex justify-end px-4 pt-4">
 		  <button
 			 id="dropdownButton"
@@ -84,5 +93,6 @@
 			 </button>
 		  </div>
 	   </div>
+	</ng-template>
 	</div>
  </div>
