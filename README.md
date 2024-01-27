@@ -1,26 +1,18 @@
-# Github Repos ![version](https://img.shields.io/badge/version-0.3.0-blue)
+# Github Repos
 
-## Sobre
+<div align="center">
+	<img width="800" src="https://i.ibb.co/gR6wmgm/Github-Repos-V2.png">
+</div>
+
+## 🔥 Sobre
 
 O projeto é aplicação para integração com o Github permitindo visualização de forma simplificada.
 
 Atualmente o projeto se encontra publicado na [Vercel](https://github-repos-wiriswernek.vercel.app/), e usa como base o Angular com Typescript e Tailwind.
 
-Segue abaixo uma prévia da aplicação.
+## 🔨 Como executar esta aplicação?
 
-<h2 align="center">Preview Desktop</h2>
-<div align="center">
-	<img width="800" src="./docs/images/macbook.png">
-</div>
-
-<h2 align="center">Preview Mobile</h2>
-<div align="center">
-	<img width="300" src="./docs/images/mobile.png">
-</div>
-
-
-## Como executar esta aplicação?
-
+### Padrão
 Para rodar a aplicação voce deve:
 - Primeiro clonar este repositório
 - Navegar para a pasta `github-repos`
@@ -30,8 +22,8 @@ Para rodar a aplicação voce deve:
 - Se desejar pode executar diretamente `ng s -o` ou `ng serve --open` para executar a aplicação e abrir automaticamente o navegador já na pagina da aplicação
 
 
-## Versões dos recursos da aplicação
-- angular/cli <img style="vertical-align: middle;" src="https://img.shields.io/badge/version-16.2.11-blue"/>
-- typescript <img style="vertical-align: middle;" src="https://img.shields.io/badge/version-5.1.6-blue"/>
-- tailwind <img style="vertical-align: middle;" src="https://img.shields.io/badge/version-3.4.0-blue"/>
-- flowbite <img style="vertical-align: middle;" src="https://img.shields.io/badge/version-2.2.1-blue"/>
+## 📦 Tecnologias usadas
+- ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)

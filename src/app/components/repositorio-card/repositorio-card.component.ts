@@ -35,6 +35,8 @@ export class RepositorioCardComponent {
             return 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg';
          case 'vue':
             return 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg';
+         case 'ejs':
+            return 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg';
          default:
             this.language = this.repositorio.language.toLowerCase();
             return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${this.language}/${this.language}-original.svg`;
