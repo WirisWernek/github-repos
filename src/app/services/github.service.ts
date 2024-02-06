@@ -6,27 +6,26 @@ import { RepositorioModel } from '../models/Repositorio.model';
 import { UserModel } from '../models/User.model';
 
 @Injectable({
-  providedIn: 'root',
+   providedIn: 'root',
 })
 export class GitHubService {
-  constructor(private http: HttpClient) {
-  }
+   constructor(private http: HttpClient) {}
 
-  getRepositorios(username: string): Observable<RepositorioModel[]> {
-    return this.http.post<RepositorioModel[]>(
-      environment.API_URL + "/github/repos",
-      {
-        "username": username
-      }
-    );
-  }
+   getRepositorios(
+      username: string,
+      perPage: number,
+      page: number
+   ): Observable<RepositorioModel[]> {
+      return this.http.post<RepositorioModel[]>(environment.API_URL + '/github/repos', {
+         username: username,
+		 per_page: perPage,
+		 page: page
+      });
+   }
 
-  getUser(username: string): Observable<UserModel> {
-    return this.http.post<UserModel>(
-      environment.API_URL + "/github/users",
-      {
-        "username": username
-      }
-    );
-  }
+   getUser(username: string): Observable<UserModel> {
+      return this.http.post<UserModel>(environment.API_URL + '/github/users', {
+         username: username,
+      });
+   }
 }
