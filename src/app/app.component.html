@@ -90,4 +90,5 @@
 		<app-spinner></app-spinner>
 	</div>
    </ng-template>
+   <app-pagination *ngIf="user.public_repos > 1" [reposLength]="user.public_repos" (emmiter)="searchPagination($event)"></app-pagination>
 </div>
