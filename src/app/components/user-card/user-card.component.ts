@@ -6,7 +6,7 @@ import { UserModel } from 'src/app/models/User.model';
    templateUrl: './user-card.component.html',
    styleUrls: ['./user-card.component.scss'],
 })
-export class UserCardComponent {
+export class UserCardComponent  {
    @Input() user!: UserModel;
 
    goToGitHub() {
