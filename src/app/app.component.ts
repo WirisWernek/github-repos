@@ -1,17 +1,4 @@
-import { Component } from '@angular/core';
-import {
-	initAccordions,
-	initCarousels,
-	initCollapses,
-	initDials,
-	initDismisses,
-	initDrawers,
-	initDropdowns,
-	initModals,
-	initPopovers,
-	initTabs,
-	initTooltips,
-} from 'flowbite';
+import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { PaginatorModel } from './models/Paginator.model';
 import { RepositorioModel } from './models/Repositorio.model';
@@ -23,7 +10,7 @@ import { GitHubService } from './services/github.service';
    templateUrl: './app.component.html',
    styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
    title = 'GitHub Repos List';
    username: string = 'wiriswernek';
    repositorios: RepositorioModel[] = [];
@@ -37,7 +24,6 @@ export class AppComponent {
 
    ngOnInit(): void {
       this.search();
-      this._initOptions();
    }
 
    search() {
@@ -70,19 +56,5 @@ export class AppComponent {
       const splittedName = this.user?.name.split(' ');
 
       return `${splittedName[0]} ${splittedName.length >= 2 ? splittedName.pop() : ''}`;
-   }
-
-   private _initOptions() {
-      initAccordions();
-      initCarousels();
-      initCollapses();
-      initDials();
-      initDismisses();
-      initDrawers();
-      initDropdowns();
-      initModals();
-      initPopovers();
-      initTabs();
-      initTooltips();
    }
 }
