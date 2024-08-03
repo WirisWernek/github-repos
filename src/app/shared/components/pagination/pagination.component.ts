@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { PaginatorModel } from 'src/app/models/Paginator.model';
 
@@ -5,13 +6,15 @@ import { PaginatorModel } from 'src/app/models/Paginator.model';
     selector: 'app-pagination',
     templateUrl: './pagination.component.html',
     styleUrls: ['./pagination.component.scss'],
+    standalone: true,
+    imports: [NgClass],
 })
 export class PaginationComponent implements AfterViewInit {
     @Output() emmiter = new EventEmitter<PaginatorModel>();
     @Input() reposLength!: number;
 
     paginator: PaginatorModel;
-    totalPage: number = 1;
+    totalPage = 1;
 
     de: number;
     ate: number;
@@ -44,8 +47,8 @@ export class PaginationComponent implements AfterViewInit {
     }
 
     calcularItens() {
-        let count = this.paginator.page * this.paginator.perPage - this.paginator.perPage;
-        let delimiter = count + this.paginator.perPage;
+        const count = this.paginator.page * this.paginator.perPage - this.paginator.perPage;
+        const delimiter = count + this.paginator.perPage;
 
         if (delimiter <= this.reposLength) {
             this.de = count + 1;

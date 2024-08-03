@@ -5,6 +5,7 @@ import { RepositorioModel } from 'src/app/models/Repositorio.model';
     selector: 'app-repositorio-card',
     templateUrl: './repositorio-card.component.html',
     styleUrls: ['./repositorio-card.component.scss'],
+    standalone: true,
 })
 export class RepositorioCardComponent {
     @Input() repositorio!: RepositorioModel;

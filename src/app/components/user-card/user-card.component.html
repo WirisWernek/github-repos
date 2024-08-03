@@ -18,7 +18,9 @@
                     class="w-24 h-24 mb-3 rounded-full shadow-lg cursor-pointer"
                     src="{{ user.avatar_url }}"
                     alt="User Image"
+					tabindex=""
                     (click)="goToGitHub()"
+                    (keypress)="goToGitHub()"
                 />
                 <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
                     {{ user.name }}
